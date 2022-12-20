@@ -130,6 +130,9 @@ charts:
 - name: prometheus-adapter
   override:
     nodeSelector: $(nodeSelector)
+- name: minio
+  override:    
+    persistence.size: 40Gi
 - name: kubernetes-event-exporter
   override:
     conf.recievers:
