@@ -87,8 +87,8 @@ charts:
       outputs:
         loki:
         - name: taco-loki
-          host: loki
-          port: 3100
+          host: loki-loki-distributed-gateway
+          port: 80
       targetLogs:
       - tag: kube.*
         bufferChunkSize: 2M
@@ -143,8 +143,8 @@ charts:
     addons:
       loki:
         enabled: true
-        host: loki
-        port: 3100
+        host: loki-loki-distributed-gateway
+        port: 80
         target_file: "/tmp/kubernetes-event.log"
     conf.default.hosts:
     - "https://eck-elasticsearch-es-http.lma.svc.$(clusterName):9200"
