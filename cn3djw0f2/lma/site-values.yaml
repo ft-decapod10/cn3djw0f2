@@ -131,7 +131,7 @@ charts:
   override:
     nodeSelector: $(nodeSelector)
 - name: minio
-  override:    
+  override:
     persistence.size: 40Gi
 - name: kubernetes-event-exporter
   override:
@@ -160,6 +160,7 @@ charts:
     queryFrontend.service.http.nodePort: 30007
     querier.stores:
     - prometheus-operated.lma.svc.$(clusterName):10901
+    - a0f52235e70f848539dc6b23c0117608-963851369.ap-northeast-2.elb.amazonaws.com:10901
     bucketweb.enabled: $(thanosPrimaryCluster)
     bucketweb.nodeSelector: $(nodeSelector)
     compactor.enabled: $(thanosPrimaryCluster)
