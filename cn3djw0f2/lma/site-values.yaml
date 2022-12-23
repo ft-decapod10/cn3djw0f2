@@ -155,6 +155,10 @@ charts:
     clusterDomain: $(clusterName)
     existingObjstoreSecret: $(thanosObjstoreSecret)
     query.nodeSelector: $(nodeSelector)
+    query.dnsDiscovery.enabled: true
+    query.dnsDiscovery.sidecarsNamespace: lma
+    query.dnsDiscovery.sidecarsService: lma-thanos-discovery
+    
     queryFrontend.nodeSelector: $(nodeSelector)
     queryFrontend.service.type: NodePort
     queryFrontend.service.http.nodePort: 30007
